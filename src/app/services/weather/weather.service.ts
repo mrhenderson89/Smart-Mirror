@@ -13,7 +13,7 @@ const httpOptions = {
 })
 export class WeatherService {
 
-  //weatherEndpoint = `https://api.openweathermap.org/data/2.5/weather?id=${cityId}&units=${metric}&APPID=26cb0c563125d2ebb375800e5b47a35b`;
+  //weatherEndpoint = `https://api.openweathermap.org/data/2.5/weather?id=${cityId}&units=${metric}&APPID=XXXXXXXXXXXXXXXXXXXXXXX`;
 
 
   constructor(private http: HttpClient) {
@@ -25,6 +25,6 @@ export class WeatherService {
 }
 
 getForecastByCityId(cityId: number, metric: 'metric' | 'imperial' = 'metric'): Observable<any>{
-    return this.http.get(`https://api.openweathermap.org/data/2.5/weather?id=${cityId}&units=${metric}&APPID=26cb0c563125d2ebb375800e5b47a35b`, httpOptions).pipe(map(this.extractData));
+    return this.http.get(`https://api.openweathermap.org/data/2.5/weather?id=${cityId}&units=${metric}&APPID=XXXXXXXXXXXXXXXXXXXXXXX`, httpOptions).pipe(map(this.extractData));
 }
 }
