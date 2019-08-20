@@ -1,0 +1,42 @@
+{
+    "pages": [    
+      {
+        "index": 0,
+        "name": "Main",
+        "icon": "",
+        "cards": [
+          {
+            "type": "sportsScore",
+            "name": "Score",
+            "sizeX": 2,
+            "sizeY": 2
+          },
+          {
+            "type": "clock",
+            "name": "Clock",
+            "sizeX": 2,
+            "sizeY": 2
+          },
+          {
+            "type": "weather",
+            "name": "Oxford Weather",
+            "sizeX": 2,
+            "sizeY": 2
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Extra",
+        "icon": "",
+        "cards": [
+          {
+            "type": "quote",
+            "name": "Quote of the Day",
+            "sizeX": 4,
+            "sizeY": 1
+          }
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,54 @@
+<div class="details-page__wrapper-dark">
+    <section class="main-weather__card-dark">
+      <section class="shoppingListContainer card-header__container-dark">
+          <ng-container *ngIf="shoppingList$ | async as shoppingList">
+        <p>Shopping list goes here!</p>
+        <table>
+            <thead>
+              <th>Item</th>
+              <th>Description</th>
+              <th>Created By</th>
+              <th>Date Created</th>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of shoppingList.data;">
+                    <td>{{item.name}}</td>
+                    <td>{{item.Description}}</td>
+                    <td>{{item.createdBy}}</td>
+                    <td>{{item.dateCreated}}</td>
+                 <td>
+                    <button class="btn btn-success" (click)="editItem(item)">
+                      <i class="fa fa-edit"></i>
+                    </button>
+                    <button class="btn btn-danger" (click)="deleteItem(item)">
+                      <i class="fa fa-remove"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </ng-container>
+          <ng-container *ngIf="!shoppingList$">
+            <p>No shopping list items!</p>
+              </ng-container>
+
+                 <form #f="ngForm">
+                    <div class=”form-group”>
+                    <input [(ngModel)]="newShoppingListItem.name" name="newShoppingListItemName" type="text" class="form-control" placeholder="Enter Item" required>
+                    <input [(ngModel)]="newShoppingListItem.description" name="newShoppingListItemDescription" type="text" class="form-control" placeholder="Enter Description">
+                    <input [(ngModel)]="newShoppingListItem.createdBy" name="newShoppingListItemCreatedBy" type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <p *ngIf="loading">
+                       <i class="fa fa-spinner fa-spin"></i>
+                    </p>
+                    <div class="form-group">
+                     <button class="btn btn-primary" [disabled]="!f.valid" (click)="saveItem()">
+                       Save Item
+                     </button>
+                    </div>
+                  </form>
+</section>  
+    </section>
+  
+  </div>
+  

@@ -1,0 +1,12 @@
+<mat-card [ngSwitch]="card.type"  [style.width.px]="card.cardWidth" [style.height.px]="card.cardHeight" [style.background-color]="card.isDefaultCardColor(card.cardColor) ? '' : card.cardColor">
+
+  <!-- <app-widget-text *ngSwitchCase="WidgetType.Text" [widget]="widget" (click)="widget.onSelect(widget)"></app-widget-text>
+  <app-widget-number *ngSwitchCase="WidgetType.Number" [widget]="widget" (click)="widget.onSelect(widget)"></app-widget-number>
+  <app-widget-image *ngSwitchCase="WidgetType.Image" [widget]="widget" (click)="widget.onSelect(widget)"></app-widget-image> -->
+  <app-clock-card *ngSwitchCase="CardType.Clock" [card]="card" (click)="card.onSelect(card)"></app-clock-card>
+  <app-quote-card *ngSwitchCase="CardType.Quote" [card]="card" (click)="card.onSelect(card)"></app-quote-card>
+  <app-sport-score-card *ngSwitchCase="CardType.SportScore" [card]="card" (click)="card.onSelect(card)"></app-sport-score-card>
+  <app-weather-card *ngSwitchCase="CardType.Weather" [card]="card" (click)="card.onSelect(card)"></app-weather-card>
+  <div *ngSwitchDefault="">Unexpected type '{{card.type}}'</div>
+
+</mat-card>
