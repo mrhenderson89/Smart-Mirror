@@ -7,7 +7,7 @@ const teamInfoEndpoint = `http://api.football-data.org/v2/teams/`;
 //const teamMatchEndpoint = `https://api.football-data.org/v2/teams/${teamId}/matches?status=${status}&limit=1`
         const httpOptions = {
             headers: new HttpHeaders({
-                'X-Auth-Token': 'c5ab3e53a873494cb0c1f90106eee2c8'
+                'X-Auth-Token': 'XXXXXXXXXXXXXXXXXXXXXXX'
             })
         };
 
